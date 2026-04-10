@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Acme Biotech - Research Data Management Platform" />
+    <title>Acme Biotech</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        
+        #root {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: white;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error-fallback {
+            padding: 2rem;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            margin: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .error-fallback h2 {
+            color: #dc3545;
+            margin-bottom: 1rem;
+        }
+        
+        .error-fallback p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .retry-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .retry-button:hover {
+            background: #5a6fd8;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="loading">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    
+    <noscript>
+        <div style="padding: 2rem; text-align: center; background: white;">
+            <h2>JavaScript Required</h2>
+            <p>Please enable JavaScript to use the Acme Biotech platform.</p>
+        </div>
+    </noscript>
+    
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
